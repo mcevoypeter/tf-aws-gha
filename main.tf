@@ -11,11 +11,6 @@ provider "aws" {
   region = var.region
 }
 
-import {
-  to = aws_iam_openid_connect_provider.this
-  id = var.gh_idp_arn
-}
-
 data "aws_iam_policy_document" "assume_role" {
   statement {
     effect = "Allow"
