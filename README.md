@@ -1,10 +1,10 @@
 # GitHub Actions Access
 
-This [Terraform] module creates an [AWS] [IAM] role that [GitHub Actions] workflows can assume via the [configure-aws-credentials GitHub Action][aws-credentials-action] to access resources in an [AWS] account. It follows the procedure described in the [GitHub Docs](https://docs.github.com/en/actions/deployment/security-hardening-your-deployments/configuring-openid-connect-in-amazon-web-services).
+This [Terraform] module creates an [AWS] [IAM] role that [GitHub Actions] workflows can assume via the [configure-aws-credentials GitHub Action][aws-credentials-action] to access resources in an [AWS] account. It follows the procedure described in the [GitHub docs](https://docs.github.com/en/actions/deployment/security-hardening-your-deployments/configuring-openid-connect-in-amazon-web-services).
 
 ## Prerequisites
 
-This module [imports](https://developer.hashicorp.com/terraform/language/import) a [GitHub] [OpenID Connect][OIDC] provider from [AWS], which means that provider must already be created before using this module. For instructions on how to do so, consult the [GitHub Docs](https://docs.github.com/en/actions/deployment/security-hardening-your-deployments/configuring-openid-connect-in-amazon-web-services#adding-the-identity-provider-to-aws).
+This module [imports](https://developer.hashicorp.com/terraform/language/import) a [GitHub] [OpenID Connect][OIDC] provider from [AWS], which means that provider must already be created before using this module. For instructions on how to do so, consult the [GitHub docs](https://docs.github.com/en/actions/deployment/security-hardening-your-deployments/configuring-openid-connect-in-amazon-web-services#adding-the-identity-provider-to-aws).
 
 ## Inputs
 
