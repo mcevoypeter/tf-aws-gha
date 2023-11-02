@@ -1,6 +1,6 @@
 # GitHub Actions Access
 
-This [Terraform] module creates an [AWS] [IAM] role that [GitHub Actions] workflows can assume to access resources in an [AWS] account. It follows the procedure described in the [GitHub Docs](https://docs.github.com/en/actions/deployment/security-hardening-your-deployments/configuring-openid-connect-in-amazon-web-services).
+This [Terraform] module creates an [AWS] [IAM] role that [GitHub Actions] workflows can assume via the [configure-aws-credentials GitHub Action][aws-credentials-action] to access resources in an [AWS] account. It follows the procedure described in the [GitHub Docs](https://docs.github.com/en/actions/deployment/security-hardening-your-deployments/configuring-openid-connect-in-amazon-web-services).
 
 ## Prerequisites
 
@@ -49,6 +49,7 @@ module "example" {
 ```
 
 [AWS]: https://aws.amazon.com/
+[aws-credentials-action]: https://github.com/aws-actions/configure-aws-credentials
 [GitHub]: https://github.com/
 [GitHub Actions]: https://docs.github.com/en/actions
 [IAM]: https://aws.amazon.com/iam/
