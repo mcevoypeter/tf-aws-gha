@@ -3,11 +3,6 @@ variable "account_id" {
   type        = number
 }
 
-variable "gh_idp_arn" {
-  description = "GitHub OpenID Connect (OIDC) provider ARN"
-  type        = string
-}
-
 variable "gh_idp" {
   description = "GitHub OIDC provider name"
   type        = string

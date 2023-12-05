@@ -22,7 +22,7 @@ The following use of this module creates an [AWS] [IAM] role that [GitHub Action
 module "example" {
   source          = "git@github.com:mcevoypeter/tf-aws-gha-access.git"
   account_id      = 012345678901
-  gh_idp_arn      = "arn:aws:iam::012345678901:oidc-provider/token.actions.githubusercontent.com"
+  gh_idp          = "arn:aws:iam::012345678901:oidc-provider/token.actions.githubusercontent.com"
   owner           = "mcevoypeter"
   repo            = "infra"
   branches        = ["main"]
