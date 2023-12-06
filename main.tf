@@ -12,20 +12,18 @@ data "aws_iam_policy_document" "assume_role" {
       values   = [var.gh_idp_aud]
     }
     condition {
-      test     = "StringLike"
+      test     = "StringEquals"
       variable = "${var.gh_idp}:sub"
-      values = concat([
-        for bp in var.branch_patterns :
-        format("repo:${var.owner}/${var.repo}:ref:refs/heads/%s", bp)
-        ], [for tp in var.tag_patterns :
-        format("repo:${var.owner}/${var.repo}:ref:refs/tags/%s", tp)
-      ])
+      values = [
+        for branch in var.branches :
+        format("repo:${var.owner}/${var.repo}:ref:refs/heads/%s", branch)
+      ]
     }
   }
 }
 
 resource "aws_iam_role" "this" {
-  name                = replace("GitHubActions-${var.owner}-${var.repo}-${join("_", var.branch_patterns)}-${join("_", var.tag_patterns)}", "*", "x")
+  name                = "GitHubActions-${var.owner}-${var.repo}-${join("_", var.branches)}"
   assume_role_policy  = data.aws_iam_policy_document.assume_role.json
   managed_policy_arns = var.policy_arns
   dynamic "inline_policy" {
