@@ -31,7 +31,8 @@ variable "branch_patterns" {
 }
 
 variable "tag_patterns" {
-  description = "Git tags that can access resources in var.account_id"
+  description = "Git tag patterns that can access resources in var.account_id"
+  type        = set(string)
 }
 
 variable "policy_arns" {
