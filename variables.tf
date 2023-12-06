@@ -25,9 +25,13 @@ variable "repo" {
   type        = string
 }
 
-variable "branches" {
-  description = "Git branches that can access resources in var.account_id"
+variable "branch_patterns" {
+  description = "Git branch patterns that can access resources in var.account_id"
   type        = set(string)
+}
+
+variable "tag_patterns" {
+  description = "Git tags that can access resources in var.account_id"
 }
 
 variable "policy_arns" {
