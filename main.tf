@@ -14,16 +14,13 @@ data "aws_iam_policy_document" "assume_role" {
     condition {
       test     = "StringEquals"
       variable = "${var.gh_idp}:sub"
-      values = [
-        for branch in var.branches :
-        format("repo:${var.owner}/${var.repo}:ref:refs/heads/%s", branch)
-      ]
+      values   = ["repo:${var.owner}/${var.repo}:environment:${var.environment}"]
     }
   }
 }
 
 resource "aws_iam_role" "this" {
-  name                = "GitHubActions-${var.owner}-${var.repo}-${join("_", var.branches)}"
+  name                = "GitHubActions-${var.owner}-${var.repo}-${var.environment}"
   assume_role_policy  = data.aws_iam_policy_document.assume_role.json
   managed_policy_arns = var.policy_arns
   dynamic "inline_policy" {
