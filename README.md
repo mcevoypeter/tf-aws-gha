@@ -48,6 +48,10 @@ module "example" {
 }
 ```
 
+## License
+
+This project is licensed under the terms of the [MIT license](https://en.wikipedia.org/wiki/MIT_License).
+
 [AWS]: https://aws.amazon.com/
 [aws-credentials-action]: https://github.com/aws-actions/configure-aws-credentials
 [GitHub]: https://github.com/
