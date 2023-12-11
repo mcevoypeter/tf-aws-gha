@@ -1,5 +1,7 @@
 # [AWS] [IAM] Role for GitHub Actions
 
+[![MIT license](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE.txt)
+
 This [Terraform] module creates an [AWS] [IAM] role that [GitHub Actions] workflows can assume via the [configure-aws-credentials GitHub Action][aws-credentials-action] to access resources in an [AWS] account. It follows the procedure described in the [GitHub docs](https://docs.github.com/en/actions/deployment/security-hardening-your-deployments/configuring-openid-connect-in-amazon-web-services).
 
 ## Prerequisites
