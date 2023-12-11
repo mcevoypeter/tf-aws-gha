@@ -28,6 +28,13 @@ variable "repo" {
 variable "branches" {
   description = "Git branches that can access resources in var.account_id"
   type        = set(string)
+  default     = []
+}
+
+variable "environments" {
+  description = "GitHub environment that can access resources in var.account_id"
+  type        = set(string)
+  default     = []
 }
 
 variable "policy_arns" {
