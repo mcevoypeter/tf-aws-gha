@@ -25,7 +25,7 @@ module "example" {
   gh_idp          = "arn:aws:iam::012345678901:oidc-provider/token.actions.githubusercontent.com"
   owner           = "mcevoypeter"
   repo            = "infra"
-  environment     = "testing"
+  branches        = ["main"]
   policy_arns     = [
     "arn:aws:iam::aws:policy/AWSLambda_FullAccess",
     "arn:aws:iam::aws:policy/AmazonS3FullAccess",

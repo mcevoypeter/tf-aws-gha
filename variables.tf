@@ -25,9 +25,9 @@ variable "repo" {
   type        = string
 }
 
-variable "environment" {
-  description = "GitHub environment that can access resources in var.account_id"
-  type        = string
+variable "branches" {
+  description = "Git branches that can access resources in var.account_id"
+  type        = set(string)
 }
 
 variable "policy_arns" {
