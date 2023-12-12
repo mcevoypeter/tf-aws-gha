@@ -26,7 +26,7 @@ data "aws_iam_policy_document" "assume_role" {
 }
 
 resource "aws_iam_role" "this" {
-  name                = "GitHubActions-${var.owner}-${var.repo}-${join("_", var.branches)}-${join("_", var.environments)}"
+  name                = "GitHubActions-${var.owner}-${var.repo}-${join("_", concat(tolist(var.branches), tolist(var.environments)))}"
   assume_role_policy  = data.aws_iam_policy_document.assume_role.json
   managed_policy_arns = var.policy_arns
   dynamic "inline_policy" {
